@@ -17,8 +17,8 @@ const Bio = () => {
     accept: {
       "image/*": [".jpeg", ".png", ".svg"],
     },
-    onDrop: (acceptedFiles) => {
-      acceptedFiles.map((file) => {
+    onDrop: (acceptedFiles: any) => {
+      acceptedFiles.map((file: any) => {
         const imgURL = URL.createObjectURL(file);
         const formData = new FormData();
         formData.append("profile-picture", file, file.name);
@@ -37,7 +37,7 @@ const Bio = () => {
         >
           <input {...getInputProps()} />
           <p className="text-center">
-            Drag & drop your files here or{" "}
+            Drag & drop your files here or
             <span className="font-semibold underline cursor-pointer">
               browse
             </span>
